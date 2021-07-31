@@ -1,6 +1,7 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
 
-export default class ThongTinDatGhe extends Component {
+class ThongTinDatGhe extends Component {
   render() {
     return (
       <div className="info">
@@ -16,9 +17,22 @@ export default class ThongTinDatGhe extends Component {
           <li>: September 2, 21:00</li>
           <li>: 2</li>
           <li>: 45000</li>
-          <li>: B1</li>
+          <li>
+            :
+            {this.props.danhSachGheDangDat.map((item, index) => {
+              return <span key={index}> {item.soGhe}, </span>;
+            })}
+          </li>
         </ul>
       </div>
     );
   }
 }
+
+const mapStateToProps = (state) => {
+  return {
+    danhSachGheDangDat: state.TicketBookingReducer.danhSachGheDangDat,
+  };
+};
+
+export default connect(mapStateToProps, null)(ThongTinDatGhe);

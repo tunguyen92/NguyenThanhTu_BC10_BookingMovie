@@ -1,5 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Kotta+One&display=swap");
 
+.banner .layer-mask button:active,
+.banner .layer-mask button:focus {
+  outline: none;
+}
+
 .banner {
   position: fixed;
   background-image: url("../assets/banner.jpg");
@@ -18,9 +23,10 @@
 .layer-mask h1 {
   font-family: "Kotta One", serif;
   text-transform: uppercase;
-  color: #fff;
+  color: rgb(202, 166, 166);
   text-align: center;
-  padding: 40px 0;
+  padding: 20px 0;
+  margin: 0;
 }
 
 h2 {
@@ -40,12 +46,13 @@ h2 {
 
 .screen {
   background-color: #d88a04;
-  padding: 10px;
+  padding: 5px;
   width: 80%;
   filter: drop-shadow(4px 30px 20px rgba(255, 255, 255, 0.5));
-  font-size: 25px;
+  font-size: 22px;
   color: #fff;
   letter-spacing: 10px;
+  margin-bottom: 2rem;
 }
 
 h3 {
@@ -67,7 +74,7 @@ h3 {
 }
 .seat .greenBox::before {
   content: "";
-  background: green;
+  background: rgb(109, 238, 109);
   width: 15px;
   height: 15px;
   display: inline-block;
@@ -81,7 +88,7 @@ h3 {
 
 .seat .redBox::before {
   content: "";
-  background: red;
+  background: rgb(240, 21, 21);
   width: 15px;
   height: 15px;
   display: inline-block;
@@ -122,16 +129,39 @@ ul.book-right {
   padding: 5px;
 }
 
-.rowNumber {
-  /* font-size: 25px; */
-  width: 45px;
-  height: 35px;
+.danhSachGhe {
+  width: 80%;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.hangGhe {
+  margin-bottom: 0.5rem;
+}
+
+.ghe {
+  border: 3px solid orange;
+  width: 42px;
+  height: 32px;
+  font-size: 15px;
+  font-weight: 700;
+  margin-left: 2.5%;
+  margin-bottom: 1%;
+  border-radius: 5px;
+}
+
+.banner .rowNumber {
+  width: 42px;
+  height: 32px;
   background: none;
   border: none;
-  margin-left: 2%;
+  margin-left: 2.6%;
   margin-bottom: 1%;
-  font-size: 30px;
-  color: yellow;
+  font-size: 20px;
+  font-weight: 700;
+  color: #fff;
+  cursor: auto;
 }
 .firstChar {
   color: yellow;
@@ -139,25 +169,15 @@ ul.book-right {
   margin-right: 15px;
 }
 
-.gheDuocChon {
-  border: 3px solid orange;
-
-  background: orange;
-  color: #000;
-
+.reservedSeat {
+  background: rgb(240, 21, 21);
   cursor: no-drop !important;
-  border-radius: 5px;
-  width: 45px;
-  height: 35px;
+  border: none;
 }
 
-.gheDangChon {
+.selectedSeat {
   background: rgb(109, 238, 109);
-  border: 3px solid rgb(109, 238, 109);
-  color: #000;
-
+  border: none;
+  outline: none;
   cursor: pointer;
-  border-radius: 5px;
-  width: 45px;
-  height: 35px;
 }

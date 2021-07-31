@@ -8,11 +8,7 @@ import HangGhe from "./HangGhe";
 export default class TicketBooking extends Component {
   renderHangGhe = () => {
     return data.map((item, index) => {
-      return (
-        <div key={index}>
-          <HangGhe />
-        </div>
-      );
+      return <HangGhe hangGhe={item} key={index} soHangGhe={index} />;
     });
   };
 
@@ -23,10 +19,10 @@ export default class TicketBooking extends Component {
           <h1>Movie Ticket Booking Widget</h1>
           <h2>Multiplex Theatre Showing Screen 1</h2>
           <div className="container-fluid">
-            <div className="row">
+            <div className="row" style={{ alignItems: "center" }}>
               <div className="col-8 text-center">
                 <div className="screen">SCREEN</div>
-                {this.renderHangGhe()}
+                <div className="danhSachGhe">{this.renderHangGhe()}</div>
               </div>
               <div className="col-4">
                 <h3>Start Selecting</h3>
