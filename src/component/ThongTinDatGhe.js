@@ -15,8 +15,20 @@ class ThongTinDatGhe extends Component {
         <ul className="book-right">
           <li>: Ms. Marvel</li>
           <li>: September 2, 21:00</li>
-          <li>: 2</li>
-          <li>: 45000</li>
+          <li>
+            :{" "}
+            {this.props.danhSachGheDangDat.reduce((tickets, item, index) => {
+              return (tickets += 1);
+            }, 0)}
+          </li>
+          <li>
+            :{" "}
+            {this.props.danhSachGheDangDat
+              .reduce((total, item, index) => {
+                return (total += item.gia);
+              }, 0)
+              .toLocaleString()}
+          </li>
           <li>
             :
             {this.props.danhSachGheDangDat.map((item, index) => {

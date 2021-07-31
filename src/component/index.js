@@ -33,7 +33,14 @@ export default class TicketBooking extends Component {
                 </ul>
                 <ThongTinDatGhe />
                 <div className="text-center">
-                  <button className="btn btn-warning">Book Now</button>
+                  <button
+                    onClick={() => {
+                      alert("Bạn đã hết tiền.\nVui lòng cày nhiều hơn.");
+                    }}
+                    className="btn btn-warning"
+                  >
+                    Book Now
+                  </button>
                 </div>
               </div>
             </div>
